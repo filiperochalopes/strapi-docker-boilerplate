@@ -1,0 +1,17 @@
+version: '3'
+services:
+  strapi:
+    image: strapi/strapi:3.5.2
+    container_name: orango_strapi
+    restart: always
+    environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_NAME: strapi_orango
+      DATABASE_HOST: 162.214.108.8
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: strapi_orango
+      DATABASE_PASSWORD: Or@ng07
+    volumes:
+      - ./app:/srv/app
+    ports:
+      - '1338:1337'
