@@ -1,7 +1,7 @@
 version: '3'
 services:
   strapi:
-    image: strapi/strapi:3.6.8-alpine
+    image: strapi/strapi:3.5.2
     container_name: ${CONTAINER_NAME}
     restart: always
     environment:
@@ -11,6 +11,7 @@ services:
       DATABASE_PORT: 5432
       DATABASE_USERNAME: ${DATABASE_USERNAME}
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
     volumes:
       - ./app:/srv/app
     ports:
